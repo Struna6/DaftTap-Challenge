@@ -11,24 +11,47 @@ import XCTest
 
 class DaftTap_ChallengeTests: XCTestCase {
 
+    var sut : ViewController!
+    var gameSut : GameViewController!
+    var dummyResults = DummyScores()
+
     override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        super.setUp()
+
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        sut = storyboard.instantiateViewController(withIdentifier: "ViewController") as? ViewController
+        _ = sut.view
     }
 
     override func tearDown() {
+        sut = nil
+        dummyResults.delete()
+        super.tearDown()
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testIfButtonIsEnabled(){
+        XCTAssert(sut.startButton!.isEnabled)
     }
 
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    func testTableViewHaveCorrectNumOfRecords(){
+        if sut.results.count == 5{
+            XCTAssert(sut.tableView.numberOfRows(inSection: 0) == 5)
+        }else{
+            XCTAssert(sut.tableView.dataSource == nil)
         }
     }
 
+    func testIfScoresDisplayedCorrectly5(){
+        dummyResults.save()
+        sut.reloadScores()
+        XCTAssert(sut.tableView.numberOfRows(inSection: 0) == 5)
+    }
+
+    func testIfScoresDisplayedCorrectly4(){
+        dummyResults.results.removeLast()
+        dummyResults.save()
+        sut.reloadScores()
+        XCTAssert(sut.tableView.numberOfRows(inSection: 0) == 4)
+    }
 }
