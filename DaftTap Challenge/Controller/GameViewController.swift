@@ -15,6 +15,7 @@ class GameViewController: UIViewController {
     @IBOutlet weak var score: UILabel!
     var scoreInGame = 0
     var timeGameStarted : Date?
+    var delegate : ReloadingCollectionView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +36,7 @@ class GameViewController: UIViewController {
 }
 
 extension GameViewController : TriggeringGame{
+
     func triggerGame() {
         self.counterInGame.isHidden = false
         self.score.isHidden = false
@@ -60,10 +62,20 @@ extension GameViewController : TriggeringEndGame{
     func triggerEndGame() {
         let tap = (self.view.gestureRecognizers?.filter(){$0 is UITapGestureRecognizer}.first!)!
         self.view.removeGestureRecognizer(tap)
-        let result = GameResult(score: scoreInGame, date: timeGameStarted!)
-        ScoreProvider.addAndUpdate(newScore: result)
+
+//        let time = Calendar.current.dateComponents([.hour, .minute, .second], from: timeGameStarted!)
+//        let stringTime = "\(time.hour!)" + ":" + "\(time.minute!)" + ":" + "\(time.second!)"
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "HH:mm:ss"
+        let stringTime = dateFormatter.string(from: timeGameStarted!).capitalized
+        ScoreProvider.addAndUpdate(newScore: (stringTime, scoreInGame))
+
+        delegate?.reload()
+        
         self.dismiss(animated: true, completion: nil)
     }
 }
 
-
+protocol ReloadingCollectionView {
+    func reload()
+}

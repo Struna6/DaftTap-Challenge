@@ -26,7 +26,6 @@
 		F9A79C9E2281CFCD00DE5B10 /* DummyScores.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A79C9D2281CFCD00DE5B10 /* DummyScores.swift */; };
 		F9A79CA52281E14800DE5B10 /* TriggeringGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A79CA42281E14800DE5B10 /* TriggeringGame.swift */; };
 		F9A79CA72281E16B00DE5B10 /* CountDownTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A79CA62281E16B00DE5B10 /* CountDownTimer.swift */; };
-		F9C6241222835C620064EF1A /* GameResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C6241122835C620064EF1A /* GameResult.swift */; };
 		F9C6241422835E220064EF1A /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C6241322835E220064EF1A /* CustomCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -59,7 +58,6 @@
 		F9A79C9D2281CFCD00DE5B10 /* DummyScores.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyScores.swift; sourceTree = "<group>"; };
 		F9A79CA42281E14800DE5B10 /* TriggeringGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriggeringGame.swift; sourceTree = "<group>"; };
 		F9A79CA62281E16B00DE5B10 /* CountDownTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountDownTimer.swift; sourceTree = "<group>"; };
-		F9C6241122835C620064EF1A /* GameResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameResult.swift; sourceTree = "<group>"; };
 		F9C6241322835E220064EF1A /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -127,7 +125,6 @@
 		F92337A72280B2B10060D7BB /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				F9C6241122835C620064EF1A /* GameResult.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -301,7 +298,6 @@
 				F9C6241422835E220064EF1A /* CustomCell.swift in Sources */,
 				F98A40862281E67800526E82 /* CountDownInGame.swift in Sources */,
 				F92337B32280BE610060D7BB /* UIApplication+VC.swift in Sources */,
-				F9C6241222835C620064EF1A /* GameResult.swift in Sources */,
 				F92337B02280B9E80060D7BB /* UIControl.swift in Sources */,
 				F9A79CA52281E14800DE5B10 /* TriggeringGame.swift in Sources */,
 				F92337AB2280B5EB0060D7BB /* GameViewController.swift in Sources */,

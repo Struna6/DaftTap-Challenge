@@ -12,7 +12,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var collectionView: UICollectionView!
     
-    var results = [GameResult]()
+    var results = [(date : String, score : Int)]()
     
 
     override func viewDidLoad() {
@@ -21,7 +21,7 @@ class ViewController: UIViewController {
     }
 
     func reloadScores(){
-        if let resultsUD = UserDefaults.standard.array(forKey: "results") as? [GameResult]{
+        if let resultsUD = UserDefaults.standard.array(forKey: "results") as? [(date : String, score : Int)]{
             if resultsUD.count > 0{
                 results = resultsUD
                 collectionView.delegate = self
@@ -33,6 +33,11 @@ class ViewController: UIViewController {
             collectionView.reloadData()
         }
     }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let target = segue.destination as! GameViewController
+        target.delegate = self
+    }
 }
 
 extension ViewController : UICollectionViewDelegate, UICollectionViewDataSource{
@@ -42,9 +47,15 @@ extension ViewController : UICollectionViewDelegate, UICollectionViewDataSource{
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellID", for: indexPath) as! CustomCell
-        cell.dateLabel.text = "\(results[indexPath.row].date)"
+        cell.dateLabel.text = results[indexPath.row].date
         cell.scoreLabel.text = "\(results[indexPath.row].score)"
         return cell
+    }
+}
+
+extension ViewController : ReloadingCollectionView{
+    func reload() {
+        reloadScores()
     }
 
 
