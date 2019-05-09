@@ -12,7 +12,6 @@
 		F923378D2280B1220060D7BB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F923378B2280B1220060D7BB /* Main.storyboard */; };
 		F923378F2280B1240060D7BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F923378E2280B1240060D7BB /* Assets.xcassets */; };
 		F92337922280B1240060D7BB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F92337902280B1240060D7BB /* LaunchScreen.storyboard */; };
-		F923379D2280B1240060D7BB /* DaftTap_ChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F923379C2280B1240060D7BB /* DaftTap_ChallengeTests.swift */; };
 		F92337AB2280B5EB0060D7BB /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92337AA2280B5EB0060D7BB /* GameViewController.swift */; };
 		F92337AC2280B5EB0060D7BB /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92337AA2280B5EB0060D7BB /* GameViewController.swift */; };
 		F92337B02280B9E80060D7BB /* UIControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92337AF2280B9E80060D7BB /* UIControl.swift */; };
@@ -23,10 +22,16 @@
 		F98A40842281E54100526E82 /* CountDownTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A79CA62281E16B00DE5B10 /* CountDownTimer.swift */; };
 		F98A40862281E67800526E82 /* CountDownInGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98A40852281E67800526E82 /* CountDownInGame.swift */; };
 		F98A40882281EBA700526E82 /* ScoreProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98A40872281EBA700526E82 /* ScoreProvider.swift */; };
-		F9A79C9E2281CFCD00DE5B10 /* DummyScores.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A79C9D2281CFCD00DE5B10 /* DummyScores.swift */; };
 		F9A79CA52281E14800DE5B10 /* TriggeringGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A79CA42281E14800DE5B10 /* TriggeringGame.swift */; };
 		F9A79CA72281E16B00DE5B10 /* CountDownTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A79CA62281E16B00DE5B10 /* CountDownTimer.swift */; };
 		F9C6241422835E220064EF1A /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C6241322835E220064EF1A /* CustomCell.swift */; };
+		F9FAB42522842BD600255B77 /* GameScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FAB42422842BD600255B77 /* GameScore.swift */; };
+		F9FAB4272284383400255B77 /* CountDownInGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98A40852281E67800526E82 /* CountDownInGame.swift */; };
+		F9FAB4282284383700255B77 /* ScoreProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98A40872281EBA700526E82 /* ScoreProvider.swift */; };
+		F9FAB4292284384000255B77 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C6241322835E220064EF1A /* CustomCell.swift */; };
+		F9FAB42C2284387600255B77 /* ReloadingCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FAB42B2284387600255B77 /* ReloadingCollectionView.swift */; };
+		F9FAB42D2284389C00255B77 /* ReloadingCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FAB42B2284387600255B77 /* ReloadingCollectionView.swift */; };
+		F9FAB42E228439C000255B77 /* GameScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9FAB42422842BD600255B77 /* GameScore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,17 +53,16 @@
 		F92337912280B1240060D7BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F92337932280B1240060D7BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F92337982280B1240060D7BB /* DaftTap ChallengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "DaftTap ChallengeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		F923379C2280B1240060D7BB /* DaftTap_ChallengeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaftTap_ChallengeTests.swift; sourceTree = "<group>"; };
-		F923379E2280B1240060D7BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F92337AA2280B5EB0060D7BB /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		F92337AF2280B9E80060D7BB /* UIControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIControl.swift; sourceTree = "<group>"; };
 		F92337B22280BE610060D7BB /* UIApplication+VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+VC.swift"; sourceTree = "<group>"; };
 		F98A40852281E67800526E82 /* CountDownInGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountDownInGame.swift; sourceTree = "<group>"; };
 		F98A40872281EBA700526E82 /* ScoreProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreProvider.swift; sourceTree = "<group>"; };
-		F9A79C9D2281CFCD00DE5B10 /* DummyScores.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyScores.swift; sourceTree = "<group>"; };
 		F9A79CA42281E14800DE5B10 /* TriggeringGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriggeringGame.swift; sourceTree = "<group>"; };
 		F9A79CA62281E16B00DE5B10 /* CountDownTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountDownTimer.swift; sourceTree = "<group>"; };
 		F9C6241322835E220064EF1A /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
+		F9FAB42422842BD600255B77 /* GameScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScore.swift; sourceTree = "<group>"; };
+		F9FAB42B2284387600255B77 /* ReloadingCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReloadingCollectionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,7 +87,6 @@
 			isa = PBXGroup;
 			children = (
 				F92337862280B1220060D7BB /* DaftTap Challenge */,
-				F923379B2280B1240060D7BB /* DaftTap ChallengeTests */,
 				F92337852280B1220060D7BB /* Products */,
 			);
 			sourceTree = "<group>";
@@ -112,19 +115,10 @@
 			path = "DaftTap Challenge";
 			sourceTree = "<group>";
 		};
-		F923379B2280B1240060D7BB /* DaftTap ChallengeTests */ = {
-			isa = PBXGroup;
-			children = (
-				F9A79C9C2281CFBD00DE5B10 /* Dummies */,
-				F923379C2280B1240060D7BB /* DaftTap_ChallengeTests.swift */,
-				F923379E2280B1240060D7BB /* Info.plist */,
-			);
-			path = "DaftTap ChallengeTests";
-			sourceTree = "<group>";
-		};
 		F92337A72280B2B10060D7BB /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F9FAB42422842BD600255B77 /* GameScore.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -166,18 +160,11 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		F9A79C9C2281CFBD00DE5B10 /* Dummies */ = {
-			isa = PBXGroup;
-			children = (
-				F9A79C9D2281CFCD00DE5B10 /* DummyScores.swift */,
-			);
-			path = Dummies;
-			sourceTree = "<group>";
-		};
 		F9A79CA12281E10C00DE5B10 /* Providing */ = {
 			isa = PBXGroup;
 			children = (
 				F9A79CA42281E14800DE5B10 /* TriggeringGame.swift */,
+				F9FAB42B2284387600255B77 /* ReloadingCollectionView.swift */,
 			);
 			path = Providing;
 			sourceTree = "<group>";
@@ -294,8 +281,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				F923378A2280B1220060D7BB /* ViewController.swift in Sources */,
+				F9FAB42522842BD600255B77 /* GameScore.swift in Sources */,
 				F9A79CA72281E16B00DE5B10 /* CountDownTimer.swift in Sources */,
 				F9C6241422835E220064EF1A /* CustomCell.swift in Sources */,
+				F9FAB42C2284387600255B77 /* ReloadingCollectionView.swift in Sources */,
 				F98A40862281E67800526E82 /* CountDownInGame.swift in Sources */,
 				F92337B32280BE610060D7BB /* UIApplication+VC.swift in Sources */,
 				F92337B02280B9E80060D7BB /* UIControl.swift in Sources */,
@@ -310,13 +299,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9FAB4282284383700255B77 /* ScoreProvider.swift in Sources */,
+				F9FAB4292284384000255B77 /* CustomCell.swift in Sources */,
 				F92337AC2280B5EB0060D7BB /* GameViewController.swift in Sources */,
 				F98A40842281E54100526E82 /* CountDownTimer.swift in Sources */,
-				F923379D2280B1240060D7BB /* DaftTap_ChallengeTests.swift in Sources */,
-				F9A79C9E2281CFCD00DE5B10 /* DummyScores.swift in Sources */,
 				F98A40832281E53E00526E82 /* TriggeringGame.swift in Sources */,
 				F92337B12280B9E80060D7BB /* UIControl.swift in Sources */,
+				F9FAB42E228439C000255B77 /* GameScore.swift in Sources */,
 				F92337B42280BE610060D7BB /* UIApplication+VC.swift in Sources */,
+				F9FAB42D2284389C00255B77 /* ReloadingCollectionView.swift in Sources */,
+				F9FAB4272284383400255B77 /* CountDownInGame.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

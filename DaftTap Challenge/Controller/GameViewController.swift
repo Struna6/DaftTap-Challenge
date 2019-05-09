@@ -19,7 +19,6 @@ class GameViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -63,19 +62,31 @@ extension GameViewController : TriggeringEndGame{
         let tap = (self.view.gestureRecognizers?.filter(){$0 is UITapGestureRecognizer}.first!)!
         self.view.removeGestureRecognizer(tap)
 
-//        let time = Calendar.current.dateComponents([.hour, .minute, .second], from: timeGameStarted!)
-//        let stringTime = "\(time.hour!)" + ":" + "\(time.minute!)" + ":" + "\(time.second!)"
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "HH:mm:ss"
         let stringTime = dateFormatter.string(from: timeGameStarted!).capitalized
-        ScoreProvider.addAndUpdate(newScore: (stringTime, scoreInGame))
 
+        let result = GameScore(date : stringTime, score : scoreInGame)
+        ScoreProvider.addAndUpdate(newScore: result)
         delegate?.reload()
-        
-        self.dismiss(animated: true, completion: nil)
+
+        let allScores = ScoreProvider.getScores()
+        var infoAboutTop = ""
+        if allScores.contains(where: { (score) -> Bool in
+            return score.date == result.date && score.score == result.score
+        }){
+            infoAboutTop = "\nCongratulations! You are on the TOP5 list of players!"
+        }
+
+        let alertController = UIAlertController.init(title: "The End", message: "Your score is: \(scoreInGame)" + infoAboutTop, preferredStyle: .alert)
+
+        let okAction = UIAlertAction.init(title: "OK", style: .default) { _ in
+            self.dismiss(animated: true, completion: nil)
+        }
+
+        alertController.addAction(okAction)
+        self.present(alertController, animated: true)
     }
 }
 
-protocol ReloadingCollectionView {
-    func reload()
-}
+

@@ -9,26 +9,34 @@
 import Foundation
 
 class ScoreProvider{
-    static var userDefaultsName = "results"
+    static private var userDefaultsName = "results"
 
-    static func addAndUpdate(newScore : (date: String, score: Int)){
+    static func addAndUpdate(newScore : GameScore){
+        var results = [GameScore]()
 
-        if var results = UserDefaults.standard.array(forKey: userDefaultsName) as? [(date : String, score : Int)]{
-            results.updateValue(newScore.score, forKey: newScore.date)
-            var sortedResults = results.sorted(){$1.value > $0.value}
-
-            while sortedResults.count > 5{
-                sortedResults.removeLast()
-            }
-
-            UserDefaults.standard.removeObject(forKey: userDefaultsName)
-            UserDefaults.standard.set(sortedResults, forKey: userDefaultsName)
-        }else{
-            let results = [newScore.date : newScore.score]
-
-            UserDefaults.standard.removeObject(forKey: userDefaultsName)
-            UserDefaults.standard.set(results, forKey: userDefaultsName)
+        if let resultsData = UserDefaults.standard.data(forKey: userDefaultsName){
+            results = try! PropertyListDecoder().decode([GameScore].self, from: resultsData)
         }
+
+        results.append(newScore)
+        results = results.sorted(){$0.score > $1.score}
+
+        if results.count > 5{
+            results.removeLast()
+        }
+        UserDefaults.standard.removeObject(forKey: userDefaultsName)
+
+        let resultsData = try! PropertyListEncoder().encode(results)
+        UserDefaults.standard.set(resultsData, forKey: userDefaultsName)
     }
-    
+
+    static func getScores() -> [GameScore]{
+        var results = [GameScore]()
+
+        if let resultsData = UserDefaults.standard.data(forKey: userDefaultsName){
+            results = try! PropertyListDecoder().decode([GameScore].self, from: resultsData)
+        }
+
+        return results
+    }
 }

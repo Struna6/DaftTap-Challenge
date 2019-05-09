@@ -12,8 +12,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var collectionView: UICollectionView!
     
-    var results = [(date : String, score : Int)]()
-    
+    var results = [GameScore]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,17 +20,17 @@ class ViewController: UIViewController {
     }
 
     func reloadScores(){
-        if let resultsUD = UserDefaults.standard.array(forKey: "results") as? [(date : String, score : Int)]{
-            if resultsUD.count > 0{
-                results = resultsUD
-                collectionView.delegate = self
-                collectionView.dataSource = self
-            }else{
-                collectionView.delegate = nil
-                collectionView.dataSource = nil
-            }
-            collectionView.reloadData()
+        let resultsUD = ScoreProvider.getScores()
+
+        if resultsUD.count > 0{
+            results = resultsUD
+            collectionView.delegate = self
+            collectionView.dataSource = self
+        }else{
+            collectionView.delegate = nil
+            collectionView.dataSource = nil
         }
+        collectionView.reloadData()
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -53,23 +52,24 @@ extension ViewController : UICollectionViewDelegate, UICollectionViewDataSource{
     }
 }
 
+extension ViewController : UICollectionViewDelegateFlowLayout{
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+
+        return CGSize(width: collectionView.frame.width, height: collectionView.frame.height/5)
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 0,left: 0,bottom: 0,right: 0)
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
+}
+
 extension ViewController : ReloadingCollectionView{
     func reload() {
         reloadScores()
     }
-
-
 }
-
-//extension ViewController : UITableViewDelegate, UITableViewDataSource{
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return results.count
-//    }
-//
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "cellID")!
-//        cell.textLabel?.text = "\(results[indexPath.row])"
-//        return cell
-//    }
-//}
 

@@ -11,5 +11,4 @@ import UIKit
 class CustomCell : UICollectionViewCell{
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
-    
 }
