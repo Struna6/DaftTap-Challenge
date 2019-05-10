@@ -16,9 +16,15 @@ class GameViewController: UIViewController {
     var scoreInGame = 0
     var timeGameStarted : Date?
     var delegate : ReloadingCollectionView?
+    let circle = UIView(frame: CGRect(origin: .zero, size: CGSize(width: 100, height: 100)))
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        circle.layer.cornerRadius = 50
+        circle.backgroundColor = .gray
+        circle.alpha = 0.0
+        self.view.addSubview(circle)
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -52,6 +58,14 @@ extension GameViewController : TriggeringGame{
     }
 
     @objc func screenTapped(_ tap : UIGestureRecognizer){
+        circle.center = tap.location(in: self.view)
+        UIView.animate(withDuration: 0.03, animations: {
+            self.circle.alpha = 0.7
+        }) { (_) in
+            UIView.animate(withDuration: 0.03, animations: {
+                self.circle.alpha = 0.0
+            })
+        }
         scoreInGame = scoreInGame + 1
         score.text = "\(scoreInGame)"
     }

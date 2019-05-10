@@ -14,10 +14,6 @@
 		F92337922280B1240060D7BB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F92337902280B1240060D7BB /* LaunchScreen.storyboard */; };
 		F92337AB2280B5EB0060D7BB /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92337AA2280B5EB0060D7BB /* GameViewController.swift */; };
 		F92337AC2280B5EB0060D7BB /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92337AA2280B5EB0060D7BB /* GameViewController.swift */; };
-		F92337B02280B9E80060D7BB /* UIControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92337AF2280B9E80060D7BB /* UIControl.swift */; };
-		F92337B12280B9E80060D7BB /* UIControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92337AF2280B9E80060D7BB /* UIControl.swift */; };
-		F92337B32280BE610060D7BB /* UIApplication+VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92337B22280BE610060D7BB /* UIApplication+VC.swift */; };
-		F92337B42280BE610060D7BB /* UIApplication+VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92337B22280BE610060D7BB /* UIApplication+VC.swift */; };
 		F98A40832281E53E00526E82 /* TriggeringGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A79CA42281E14800DE5B10 /* TriggeringGame.swift */; };
 		F98A40842281E54100526E82 /* CountDownTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A79CA62281E16B00DE5B10 /* CountDownTimer.swift */; };
 		F98A40862281E67800526E82 /* CountDownInGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98A40852281E67800526E82 /* CountDownInGame.swift */; };
@@ -54,8 +50,6 @@
 		F92337932280B1240060D7BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F92337982280B1240060D7BB /* DaftTap ChallengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "DaftTap ChallengeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F92337AA2280B5EB0060D7BB /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
-		F92337AF2280B9E80060D7BB /* UIControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIControl.swift; sourceTree = "<group>"; };
-		F92337B22280BE610060D7BB /* UIApplication+VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+VC.swift"; sourceTree = "<group>"; };
 		F98A40852281E67800526E82 /* CountDownInGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountDownInGame.swift; sourceTree = "<group>"; };
 		F98A40872281EBA700526E82 /* ScoreProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreProvider.swift; sourceTree = "<group>"; };
 		F9A79CA42281E14800DE5B10 /* TriggeringGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriggeringGame.swift; sourceTree = "<group>"; };
@@ -145,19 +139,9 @@
 			children = (
 				F9A79CA32281E12800DE5B10 /* Provider */,
 				F9A79CA12281E10C00DE5B10 /* Providing */,
-				F92337AE2280B9D70060D7BB /* Extensions */,
 				F9C6241322835E220064EF1A /* CustomCell.swift */,
 			);
 			path = Utilities;
-			sourceTree = "<group>";
-		};
-		F92337AE2280B9D70060D7BB /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				F92337AF2280B9E80060D7BB /* UIControl.swift */,
-				F92337B22280BE610060D7BB /* UIApplication+VC.swift */,
-			);
-			path = Extensions;
 			sourceTree = "<group>";
 		};
 		F9A79CA12281E10C00DE5B10 /* Providing */ = {
@@ -286,8 +270,6 @@
 				F9C6241422835E220064EF1A /* CustomCell.swift in Sources */,
 				F9FAB42C2284387600255B77 /* ReloadingCollectionView.swift in Sources */,
 				F98A40862281E67800526E82 /* CountDownInGame.swift in Sources */,
-				F92337B32280BE610060D7BB /* UIApplication+VC.swift in Sources */,
-				F92337B02280B9E80060D7BB /* UIControl.swift in Sources */,
 				F9A79CA52281E14800DE5B10 /* TriggeringGame.swift in Sources */,
 				F92337AB2280B5EB0060D7BB /* GameViewController.swift in Sources */,
 				F98A40882281EBA700526E82 /* ScoreProvider.swift in Sources */,
@@ -304,9 +286,7 @@
 				F92337AC2280B5EB0060D7BB /* GameViewController.swift in Sources */,
 				F98A40842281E54100526E82 /* CountDownTimer.swift in Sources */,
 				F98A40832281E53E00526E82 /* TriggeringGame.swift in Sources */,
-				F92337B12280B9E80060D7BB /* UIControl.swift in Sources */,
 				F9FAB42E228439C000255B77 /* GameScore.swift in Sources */,
-				F92337B42280BE610060D7BB /* UIApplication+VC.swift in Sources */,
 				F9FAB42D2284389C00255B77 /* ReloadingCollectionView.swift in Sources */,
 				F9FAB4272284383400255B77 /* CountDownInGame.swift in Sources */,
 			);
