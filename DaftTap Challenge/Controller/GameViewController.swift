@@ -16,12 +16,12 @@ class GameViewController: UIViewController {
     var scoreInGame = 0
     var timeGameStarted : Date?
     var delegate : ReloadingCollectionView?
-    let circle = UIView(frame: CGRect(origin: .zero, size: CGSize(width: 100, height: 100)))
+    let circle = UIView(frame: CGRect(origin: .zero, size: CGSize(width: 150, height: 150)))
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        circle.layer.cornerRadius = 50
+        circle.layer.cornerRadius = 75
         circle.backgroundColor = .gray
         circle.alpha = 0.0
         self.view.addSubview(circle)
@@ -77,7 +77,7 @@ extension GameViewController : TriggeringEndGame{
         self.view.removeGestureRecognizer(tap)
 
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "HH:mm:ss"
+        dateFormatter.dateFormat = "d MMM yyyy HH:mm:ss"
         let stringTime = dateFormatter.string(from: timeGameStarted!).capitalized
 
         let result = GameScore(date : stringTime, score : scoreInGame)
